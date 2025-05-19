@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Contacto</title>
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <h1>Contacto</h1>
+        <nav>
+            <ul class="items-menu-header">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="avisos.html">Avisos</a></li>
+                <li><a href="sobremi.html">Sobre mi</a></li>
+                <li><a href="materias.html">Materias</a></li>
+                <li><a href="·">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="form-registro">
+            <h2>Contactarme por mail</h2>
+            <form action="" method="" id="form-contacto" novalidate>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="input-campo" data-valida="nombre" required>
+                <div class="mensaje-error" id="error-nombre"></div>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="input-campo" data-valida="email" required>
+                <div class="mensaje-error" id="error-email"></div>
+
+                <label for="asunto">Asunto:</label>
+                <input type="text" id="asunto" name="asunto" class="input-campo" data-valida="asunto" required>
+                <div class="mensaje-error" id="error-asunto"></div>
+
+                <label for="comentario">Comentario:</label>
+                <textarea id="comentario" name="comentario" class="input-campo" data-valida="comentario"required></textarea>
+                <div class="mensaje-error" id="error-comentario"></div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Gabriel Ruffo - Licenciatura en gestión de tecnología de la información (V13121) - © 2025</p>
+        <p>Curso: Diseño y Desarollo Web (15130) - Profesora: Patricia Litovicius</p>
+    </footer>
+
+    <script src="formularioContacto.js"></script>
+</body>
+
+</html>

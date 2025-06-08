@@ -15,15 +15,26 @@
     --fondo: #f8fafc;
     --item-listo: #d5f5e3;
     --item-pendiente: #ffe6cc;
+    --dark-header-footer: #1a1a1a;
+    --dark-fondo: #1e1e1e;
+    --dark-texto: #f0f0f0;
+    --dark-tarjeta: #444;
+    --dark-botones: #333;
+    ;
 }
 
-html, body {
+body {
+    transition: background-color 0.4s, color 0.4s;
+}
+
+html,
+body {
     font-family: 'Segoe UI', sans-serif;
     line-height: 1.6;
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: var(--fondo);
+
     color: var(--texto);
     display: flex;
     flex-direction: column;
@@ -35,8 +46,9 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: 160px;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: var(--azul-claro);
     color: var(--azul-profundo);
     padding: 10px;
@@ -104,12 +116,210 @@ nav ul li a:hover {
 .menu-icon span:nth-child(1) {
     top: 0;
 }
+
 .menu-icon span:nth-child(2) {
     top: 10px;
 }
+
 .menu-icon span:nth-child(3) {
     top: 20px;
 }
+
+/*----------------------------------------*/
+
+#modo-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+}
+
+#modo-toggle button {
+    font-size: 1rem;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--fondo);
+    color: var(--dark-botones);
+    cursor: pointer;
+    width: auto;
+    min-width: unset;
+}
+
+/* Modo claro (por defecto) */
+body.modo-claro {
+    background-color: var(--fondo);
+    color: var(--texto);
+}
+
+/* Modo oscuro */
+body.modo-oscuro {
+    background-color: var(--dark-fondo);
+    color: var(--dark-texto);
+}
+
+body.modo-oscuro #modo-toggle button {
+    background-color: var(--dark-botones);
+    color: var(--dark-texto);
+}
+
+#modo-toggle button:hover {
+    opacity: 0.8;
+}
+
+body.modo-oscuro .menu-icon span{
+    background-color: var(--dark-texto);
+    color: var(--dark-texto);
+}
+
+/* Estilos opcionales para campos, botones, etc. */
+input,
+textarea,
+button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.modo-oscuro header,
+body.modo-oscuro nav ul li a,
+body.modo-oscuro .items-menu-header,
+body.modo-oscuro footer {
+    background-color: var(--dark-header-footer);
+    color: var(--dark-texto);
+}
+
+body.modo-oscuro section,
+body.modo-oscuro section li,
+body.modo-oscuro section h1,
+body.modo-oscuro section h3 {
+    background-color: var(--dark-tarjeta);
+    color: var(--dark-texto)
+}
+
+body.modo-oscuro article,
+body.modo-oscuro article h1 {
+    background-color: var(--dark-tarjeta);
+    color: var(--dark-texto)
+}
+
+body.modo-oscuro article li{
+    background-color: var(--dark-botones);
+}
+
+body.modo-oscuro section a {
+    background-color: var(--fondo);
+    color: var(--texto)
+}
+
+body.modo-oscuro section table thead{
+    background-color: var(--dark-botones);
+    color: var(--dark-texto);
+}
+
+body.modo-oscuro section table tbody tr:hover td,
+body.modo-oscuro section table tbody tr:hover td{
+    background-color: var(--dark-fondo);
+}
+
+body.modo-oscuro input,
+body.modo-oscuro textarea {
+    background-color: var(--dark-tarjeta);
+    color: var(--dark-texto);
+    border: 1px solid #555;
+}
+
+body.modo-oscuro button {
+    background-color: var(--dark-botones);
+    color: var(--dark-texto);
+}
+
+body.modo-oscuro .tarjeta_links{
+    background-color: var(--dark-botones);
+    color: var(--dark-texto);
+}
+
+body.modo-oscuro .tarjeta_links h3,
+body.modo-oscuro .tarjeta_links ul li,
+body.modo-oscuro .tarjeta_links ul li a{
+    background-color: var(--dark-botones);
+    color: var(--dark-texto);
+}
+
+body.modo-oscuro .tarjeta_sobre_mi,
+body.modo-oscuro .tarjeta_links{
+    border-left: 6px solid var(--dark-header-footer);
+}
+
+body.modo-oscuro .lista-cursos{
+    background-color: var(--dark-botones);
+    color: var(--dark-texto);
+    border-left: 6px solid var(--dark-header-footer);
+}
+
+body.modo-oscuro .lista-cursos h2{
+    color: var(--dark-texto);
+}
+
+body.modo-oscuro .lista-cursos nav ul li{
+    background-color: var(--dark-header-footer);
+    color: var(--dark-texto);
+}
+
+body.modo-oscuro .contenedor-frame-materias,
+body.modo-oscuro .contenedor-frame-materias h2{
+    background-color: var(--dark-header-footer);
+    color: var(--dark-texto);
+}
+
+body.modo-oscuro .contenedor-frame-materias,
+body.modo-oscuro .contenedor-frame-materias ol li,
+body.modo-oscuro .contenedor-frame-materias ol li a{
+    background-color: var(--dark-tarjeta);
+    color: var(--dark-texto);
+}
+
+body.modo-oscuro .frame-fechas-examenes,
+body.modo-oscuro .frame-fechas-examenes h3,
+body.modo-oscuro .frame-fechas-examenes ol li,
+body.modo-oscuro .frame-fechas-examenes ol li::marker{
+    background-color: var(--dark-botones);
+}
+
+body.modo-oscuro .frame-bibliografia,
+body.modo-oscuro .frame-bibliografia h3,
+body.modo-oscuro .frame-bibliografia ul li,
+body.modo-oscuro .frame-bibliografia ol li{
+    background-color: var(--dark-botones);
+}
+
+body.modo-oscuro .frame-actividades,
+body.modo-oscuro .frame-actividades h3,
+body.modo-oscuro .frame-actividades h4,
+body.modo-oscuro .frame-actividades ul li,
+body.modo-oscuro .frame-actividades ol li,
+body.modo-oscuro .frame-actividades ol li a,
+body.modo-oscuro .frame-actividades ol li::marker{
+    background-color: var(--dark-botones);
+}
+
+body.modo-oscuro section form input{
+    background-color: var(--dark-header-footer);
+    color: var(--dark-texto);
+}
+
+body.modo-oscuro section form .invalido{
+    background-color: var(--dark-header-footer);
+    color: var(--dark-texto);
+}
+
+body.modo-oscuro section form .mensaje-error{
+    color: var(--dark-texto);
+}
+
+/*-----------------------------*/
 
 main {
     flex: 1;
@@ -153,7 +363,8 @@ thead {
     color: var(--azul-profundo);
 }
 
-th, td {
+th,
+td {
     padding: 15px 20px;
     text-align: left;
     border-bottom: 1px solid #ddd;
@@ -213,17 +424,17 @@ footer {
 
 /* ------- pagina Avisos -----------*/
 /* Tabla de tareas por cursos */
-.seccion_lista_materias{
+.seccion_lista_materias {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-.seccion_lista_materias h2{
+.seccion_lista_materias h2 {
     text-align: center;
 }
 
-.tareas_materias{
+.tareas_materias {
     animation: fadeSlideUp 1.2s ease forwards;
     background: var(--blanco-tabla);
     padding: 30px;
@@ -297,7 +508,7 @@ li a:hover {
     margin-left: 100px;
     margin-right: 100px;
     padding: 2rem;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -342,7 +553,7 @@ li a:hover {
     border-left: 6px solid var(--azul-profundo);
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
 }
 
 .tarjeta_links h3 {
@@ -375,7 +586,7 @@ li a:hover {
 
 /*---------Pagina Materias----------*/
 /* Estilo para la lista de materias */
-.lista-cursos-contenedor{
+.lista-cursos-contenedor {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -396,7 +607,7 @@ li a:hover {
     text-align: center;
 }
 
-.caja_contenedora{
+.caja_contenedora {
     background-color: var(--azul-suave);
     max-width: 100%;
 }
@@ -442,7 +653,7 @@ li a:hover {
 
 
 /*---------Disenio paginas por materia--------*/
-.contenedor-frame-principal{
+.contenedor-frame-principal {
     margin-top: 170px;
     display: flex;
     justify-content: center;
@@ -466,7 +677,8 @@ li a:hover {
 
 /* Título principal */
 .contenedor-frame-materias h2 {
-    grid-column: 1 / -1; /* ocupa toda la fila */
+    grid-column: 1 / -1;
+    /* ocupa toda la fila */
     text-align: center;
     color: var(--texto);
     margin-bottom: 10px;
@@ -477,7 +689,8 @@ li a:hover {
     background-color: var(--azul-suave);
     border-radius: 20px;
     padding: 20px;
-    grid-column: 1 / 2; /* columna izquierda */
+    grid-column: 1 / 2;
+    /* columna izquierda */
     grid-row: 2 / 3;
 }
 
@@ -486,7 +699,8 @@ li a:hover {
     background-color: var(--azul-suave);
     border-radius: 20px;
     padding: 20px;
-    grid-column: 1 / 2; /* columna izquierda */
+    grid-column: 1 / 2;
+    /* columna izquierda */
     grid-row: 3 / 4;
 }
 
@@ -495,8 +709,10 @@ li a:hover {
     background-color: var(--azul-suave);
     border-radius: 20px;
     padding: 20px;
-    grid-column: 2 / 3; /* columna derecha */
-    grid-row: 2 / 4; /* ocupa dos filas */
+    grid-column: 2 / 3;
+    /* columna derecha */
+    grid-row: 2 / 4;
+    /* ocupa dos filas */
 }
 
 /* Titulos internos */
@@ -511,10 +727,11 @@ li a:hover {
     color: var(--texto);
 }
 
-.contenedor-frame-materias ul{
+.contenedor-frame-materias ul {
     margin-left: 15px;
 }
-.contenedor-frame-materias ol{
+
+.contenedor-frame-materias ol {
     margin-left: 15px;
 }
 
@@ -539,7 +756,7 @@ li a:hover {
     padding: 20px;
     background-color: white;
     border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 form label {
@@ -580,9 +797,11 @@ form label {
     margin-top: 5px;
     height: 18px;
 }
+
 /*----------*/
 
-form input, form select {
+form input,
+form select {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
@@ -595,7 +814,7 @@ form input[type="checkbox"] {
     margin-right: 8px;
 }
 
-textarea{
+textarea {
     width: 100%;
     max-width: 100%;
 }
@@ -630,6 +849,7 @@ button:hover {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -641,6 +861,7 @@ button:hover {
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -648,13 +869,33 @@ button:hover {
 }
 
 /*---- Responsive para tablets---*/
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     header {
         padding: 10px;
         text-align: left;
         transition: background-color 0.3s ease;
     }
-    
+
+    .modo-texto {
+        display: none;
+    }
+
+    #modo-toggle {
+        top: 5rem;
+    }
+
+    #modo-toggle #modo-claro,
+    #modo-toggle #modo-oscuro {
+        margin: 0px;
+        padding: 10px;
+    }
+
+    body.modo-oscuro section table tbody tr,
+    body.modo-oscuro section table tbody td::before{
+        background-color: var(--dark-botones);
+        color: var(--dark-texto);
+    }
+
     .menu-icon {
         display: block;
         position: absolute;
@@ -666,38 +907,43 @@ button:hover {
         flex-direction: column;
         align-items: center;
         position: absolute;
-        top: 60px;
+        top: 160px;
         left: 0;
         width: 100%;
         background-color: var(--azul-claro);
         max-height: 0;
-        overflow: hidden; 
+        overflow: hidden;
         transition: max-height 0.5s ease;
         padding: 0;
-      }
+    }
 
     /* Cuando se hace click en el checkbox */
-    .menu-toggle:checked + .menu-icon + h1 + nav .items-menu-header {
+    .menu-toggle:checked+.menu-icon+h1+nav .items-menu-header {
         max-height: 300px;
         padding: 10px 0;
     }
-    
+
     /* Opcional: animar el ícono al abrir */
-    .menu-toggle:checked + .menu-icon span:nth-child(1) {
+    .menu-toggle:checked+.menu-icon span:nth-child(1) {
         transform: rotate(45deg);
         top: 10px;
     }
 
-    .menu-toggle:checked + .menu-icon span:nth-child(2) {
+    .menu-toggle:checked+.menu-icon span:nth-child(2) {
         opacity: 0;
     }
 
-    .menu-toggle:checked + .menu-icon span:nth-child(3) {
+    .menu-toggle:checked+.menu-icon span:nth-child(3) {
         transform: rotate(-45deg);
         top: 10px;
     }
 
-    table, thead, tbody, th, td, tr {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
         display: block;
     }
 
@@ -747,20 +993,25 @@ button:hover {
 }
 
 /*---- Responsive para celulares---*/
-@media (max-width: 480px) { 
-    html, body {
+@media (max-width: 480px) {
+
+    html,
+    body {
         font-family: 'Segoe UI', sans-serif;
         line-height: 1;
         display: flex;
         flex-direction: column;
     }
-    .tabla_materias{
+
+    .tabla_materias {
         margin: auto;
     }
-    .tareas_materias{
+
+    .tareas_materias {
         margin: auto;
     }
-    .tarjeta_sobre_mi{
+
+    .tarjeta_sobre_mi {
         margin: auto;
     }
 }

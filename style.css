@@ -199,7 +199,6 @@ body.modo-oscuro section h3 {
     color: var(--dark-texto)
 }
 
-body.modo-oscuro article,
 body.modo-oscuro article h1 {
     background-color: var(--dark-tarjeta);
     color: var(--dark-texto)
@@ -246,6 +245,14 @@ body.modo-oscuro .tarjeta_links ul li,
 body.modo-oscuro .tarjeta_links ul li a{
     background-color: var(--dark-botones);
     color: var(--dark-texto);
+}
+
+body.modo-oscuro .seccion_lista_materias article{
+    background-color: var(--dark-fondo);
+}
+
+body.modo-oscuro .seccion_lista_materias article h3{
+    background-color: var(--dark-fondo);
 }
 
 body.modo-oscuro .tarjeta_sobre_mi,
